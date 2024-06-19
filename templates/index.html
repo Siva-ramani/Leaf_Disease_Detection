@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link rel="stylesheet" href={{url_for('static',filename = 'css/mains.css')}}
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Leaf Image</title>
+  </head>
+  <body class="upload-body">
+    <h1 class="title">
+      Leaf Disease Detection
+    </h1>
+    <div class="upload-form">
+      <form
+        action="/predict"
+        method="post"
+        enctype="multipart/form-data"
+        onsubmit="showloading()"
+      >
+        <h2>Upload an image to predict disease</h2>
+        <input type="file" name="image" class="upload" />
+        <input type="submit" value="Predict" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Leaf Disease Detection</title>
+</head>
+
+<body background="{{ url_for('static', filename='images/bg.jpg') }}">
+
+    <div>
+        <h1 style="text-align:center;font-size:4rem">Leaf Disease Detection</h1>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="container my-2">
+        <div class="row mb-5">
+            <div class="col-sm" style="margin-bottom: 23px;">
+                <span class="border border-primary">
+                    <!-- Display the uploaded image here -->
+                    <img src="{{ url_for('static', filename='images/uploaded_image.jpg') }}" alt="Uploaded Image" style="width:400px;height:400px;">
+                </span>
+            </div>
+            <div class="col-sm">
+                <div>
+                    <!-- Display the predicted class here -->
+                    <h1 style="padding: 15px; background-color: rgb(15, 15, 15); color: white;"
+                        class="text-center mb-5 content-h1 rounded">
+                        {{ predicted_class }} </h1>
+                </div>
+                <div>
+                    <!-- Display the treatment information here -->
+                    <h2 style="font-size: 38px;">Treatment:</h2>
+                    <br>
+                    <p style="font-size: 28px;">{{ treatment }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
